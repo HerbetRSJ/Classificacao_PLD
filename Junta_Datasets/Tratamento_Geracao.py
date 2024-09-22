@@ -58,7 +58,7 @@ geracao
 serie_year = geracao.din_instante.dt.year.astype(str)
 serie_week = geracao.din_instante.dt.isocalendar().week.astype(str)
 geracao["Ano_sem"] = serie_year + "_" + serie_week
-geracao_grouped = geracao.drop(["din_instante"], axis=1).groupby(["Ano_sem"], as_index=False).sum()
+geracao_grouped = geracao.drop(["din_instante"], axis=1).groupby(["Ano_sem"], as_index=False).mean()
 geracao_grouped
 # %%
 geracao_grouped.to_csv("Geracao_Semanal_NE_2001_2024.csv")

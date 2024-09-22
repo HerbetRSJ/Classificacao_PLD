@@ -14,3 +14,5 @@ df_merged
 #%%
 df_merged.to_csv("dataset_final.csv")
 
+#%% 
+df_merged.isna().sum()

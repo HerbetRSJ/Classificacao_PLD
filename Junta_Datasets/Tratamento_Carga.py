@@ -21,7 +21,7 @@ carga
 serie_year = carga.din_instante.dt.year.astype(str)
 serie_week = carga.din_instante.dt.isocalendar().week.astype(str)
 carga["Ano_sem"] = serie_year + "_" + serie_week
-carga_grouped = carga.drop(["id_subsistema", "din_instante"], axis=1).groupby(["Ano_sem", "nom_subsistema"], as_index=False).sum()
+carga_grouped = carga.drop(["id_subsistema", "din_instante"], axis=1).groupby(["Ano_sem", "nom_subsistema"], as_index=False).mean()
 carga_grouped 
 
 

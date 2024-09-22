@@ -23,9 +23,9 @@ serie_week = ena.ena_data.dt.isocalendar().week.astype(str)
 ena["Ano_sem"] = serie_year + "_" + serie_week
 
 # Foram utilizadas operaçoes diferentes de agrupamento, dada a característida de cada atributo
-ena_grouped = ena.drop(["id_subsistema", "ena_data"], axis=1).groupby(["Ano_sem", "nom_subsistema"], as_index=False).agg({"ena_bruta_regiao_mwmed": "sum",
+ena_grouped = ena.drop(["id_subsistema", "ena_data"], axis=1).groupby(["Ano_sem", "nom_subsistema"], as_index=False).agg({"ena_bruta_regiao_mwmed": "mean",
                                                                                                                           "ena_bruta_regiao_percentualmlt": "mean",
-                                                                                                                          "ena_armazenavel_regiao_mwmed": "sum",
+                                                                                                                          "ena_armazenavel_regiao_mwmed": "mean",
                                                                                                                           "ena_armazenavel_regiao_percentualmlt": "mean"})
 ena_grouped 
 
